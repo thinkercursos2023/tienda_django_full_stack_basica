@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Cliente</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+</head>
+<body>
+    <br>
+    <a href="/clientes/"><button>Volver a la lista de Clientes</button></a>
+    <br>
+    <h1>Editar Cliente</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>

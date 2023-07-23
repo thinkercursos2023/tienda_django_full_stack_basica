@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Cliente</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+</head>
+<body>
+    <br>
+    <a href="/clientes/"><button>Volver</button> </a>
+    <h1>Crear un nuevo cliente</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Cliente</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* styles.css */
+
+/* Estilos para la tabla de productos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+table tr:hover {
+    background-color: #f8f8f8;
+}
+
+/* Estilos para el enlace "Crear un nuevo producto" */
+.button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el título "Store app - Mis productos" */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+a {
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar el mouse sobre los enlaces */
+    text-decoration: none; /* Quita la subrayado por defecto en los enlaces */
+    color: #007bff; /* Cambia el color del texto de los enlaces, puedes ajustarlo según tus preferencias */
+}

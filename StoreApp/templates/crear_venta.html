@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Venta</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+</head>
+<body>
+    <br>
+    <a href="/ventas/"><button>Volver</button> </a>
+    <h1>Crear una nueva venta</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Venta</button>
+    </form>
+</body>
+</html>

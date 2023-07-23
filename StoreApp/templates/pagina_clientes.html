@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soy la vista Clientes</title>
+    <link rel="stylesheet" href="{% static 'css/global_paginas.css' %}">
+</head>
+<body>
+    {% include 'componente_navbar.html' %}
+    <br>
+    <h2>Store app - Mis clientes</h2>
+    <br>
+    <a href="/crear_cliente/" class="button">Crear un nuevo cliente</a>
+    <br>
+    <table>
+        <tr>
+            <th>id_cliente</th>
+            <th>nombre_cliente</th>
+            <th>correo</th>
+            <th>Acciones</th>
+        </tr>
+        {% for item in clientes %}
+            <tr> 
+                <td>{{ item.id_cliente }}</td>
+                <td>{{ item.nombre_cliente }}</td>
+                <td>{{ item.correo }}</td>
+                <td>
+                    <a href="/editar_cliente/{{ item.id_cliente }}" class="button">Editar</a>
+                    <a href="/eliminar_cliente/{{ item.id_cliente }}" class="button">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

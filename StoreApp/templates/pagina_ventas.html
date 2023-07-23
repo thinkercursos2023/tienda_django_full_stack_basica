@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soy la vista Ventas</title>
+    <link rel="stylesheet" href="{% static 'css/global_paginas.css' %}">
+</head>
+<body>
+    {% include 'componente_navbar.html' %}
+    <br>
+    <h2>Store app - Mis ventas</h2>
+    <br>
+    <a href="/crear_venta/" class="button">Crear una nueva venta</a>
+    <br>
+    <table>
+        <tr>
+            <th>id_venta</th>
+            <th>id_producto</th>
+            <th>nombre_producto</th>
+            <th>cantidad_vendida</th>
+            <th>precio_venta</th>
+            <th>total_venta</th>
+            <th>id_cliente</th>
+            <th>nombre_cliente</th>
+            <th>Acciones</th>
+        </tr>
+        {% for item in ventas %}
+            <tr> 
+                <td>{{ item.id_venta }}</td>
+                <td>{{ item.id_producto.id_producto }}</td>
+                <td>{{ item.id_producto.nombre_producto }}</td>
+                <td>{{ item.cantidad_vendida }}</td>
+                <td>{{ item.precio_venta }}</td>
+                <td>{{ item.total_venta }}</td>
+                <td>{{ item.id_cliente.id_cliente }}</td>
+                <td>{{ item.id_cliente.nombre_cliente }}</td>
+                <td>
+                    <a href="/editar_venta/{{ item.id_venta }}" class="button">Editar</a>
+                    <a href="/eliminar_venta/{{ item.id_venta }}" class="button">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

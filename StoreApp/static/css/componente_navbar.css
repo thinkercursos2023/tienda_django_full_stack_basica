@@ -1,0 +1,40 @@
+/* componente_navbar.css */
+
+/* Estilos para el componente de navegación (navbar) */
+.contenedor_navbar {
+    background-color: #073f9e;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.items_navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.item_individual_navbar {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin: 0 15px;
+}
+
+.item_individual_navbar:hover {
+    background-color: #1a202c;
+}
+
+/* Estilo para resaltar la página activa */
+.item_individual_navbar.active {
+    background-color: #007bff;
+}
+
+a{
+    text-decoration: none;
+}

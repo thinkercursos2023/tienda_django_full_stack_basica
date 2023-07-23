@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eliminar Venta</title>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+</head>
+<body>
+    <br>
+    <a href="/ventas/"><button>Volver a la lista de ventas</button> </a>
+    <br>
+    <h1>Eliminar Venta</h1>
+    <p>¿Estás seguro de que deseas eliminar la venta "{{ venta.id_venta }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+</body>
+</html>

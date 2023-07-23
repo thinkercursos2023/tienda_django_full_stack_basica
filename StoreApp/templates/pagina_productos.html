@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soy la vista Productos</title>
+    <link rel="stylesheet" href="{% static 'css/global_paginas.css' %}">
+</head>
+<body>
+    {% include 'componente_navbar.html' %}
+    <br>
+    <h2>Store app - Mis productos</h2>
+    
+    <br>
+    <a href="/crear_producto/" class="button">Crear un nuevo producto</a>
+    <table>
+        <tr>
+            <th>id_producto</th>
+            <th>nombre_producto</th>
+            <th>descripcion_producto</th>
+            <th>cantidad_disponible</th>
+            <th>Acciones</th>
+        </tr>
+        {% for item in productos %}
+            <tr> 
+                <td>{{ item.id_producto }}</td>
+                <td>{{ item.nombre_producto }}</td>
+                <td>{{ item.descripcion_producto }}</td>
+                <td>{{ item.cantidad_disponible }}</td>
+                <td>
+                    <a href="/editar_producto/{{ item.id_producto }}" class="button">Editar</a>
+                    <a href="/eliminar_producto/{{ item.id_producto }}" class="button">Eliminar</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
